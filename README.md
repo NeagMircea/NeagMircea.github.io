@@ -1,1 +1,2 @@
-# NeagMircea.github.io
+# Programare aplicatii mobile
+
