@@ -22,7 +22,7 @@ function compute_solutions(coef)
   if (delta>=0)
   {
     x1_re=(-coef.b-Math.sqrt(delta))/2*coef.a;
-    x1_re=(-coef.b+Math.sqrt(delta))/2*coef.a;
+    x2_re=(-coef.b+Math.sqrt(delta))/2*coef.a;
     x1_im=0;
     x2_im=0;
   }
