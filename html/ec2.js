@@ -1,4 +1,5 @@
-document.getElementById('id_logic_version').innerHTML="logic v. 10.14.19.0";
+document.getElementById('id_logic_version').innerHTML="logic v. 10.14.19.1";
+document.getElementById('id_button').addEventListener('click',solve_ec2);
 function solve_ec2()
 {
   var a = document.getElementById('id_a').value;
