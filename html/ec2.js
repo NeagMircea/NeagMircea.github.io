@@ -11,7 +11,7 @@ function solve_ec2()
   if (delta>=0)
   {
     x1_re=(-b-Math.sqrt(delta))/2*a;
-    x1_re=(-b+Math.sqrt(delta))/2*a;
+    x2_re=(-b+Math.sqrt(delta))/2*a;
     x1_im=0;
     x2_im=0;
   }
