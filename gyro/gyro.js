@@ -1,4 +1,4 @@
-document.getElementById("id_logic").innerHTML="logic= 11.04.2019.2";
+document.getElementById("id_logic").innerHTML="logic= 11.04.2019.3";
 
 window.addEventListener("deviceorientation",on_gyro_data_uab);
 window.addEventListener("devicemotion", on_acc_data_uab);
