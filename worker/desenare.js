@@ -1,4 +1,4 @@
-document.getElementById("id_logic").innerHTML = "2019.11.25.7";
+document.getElementById("id_logic").innerHTML = "2019.11.25.8";
 document.getElementById("id_start").addEventListener("click", start);
 document.getElementById("id_stop").addEventListener("click", stop);
 
@@ -44,11 +44,11 @@ function start(){
 		document.getElementById("id_prime").innerHTML = e.data;
 		}
 		
-		muncitor.postmessage("start");
+		muncitor.postMessage("start");
 	}
 	
 	else 
-		muncitor.postmessage("start");
+		muncitor.postMessage("start");
 }
 
 function stop(){
@@ -56,7 +56,7 @@ function stop(){
 	document.getElementById("id_stop").disabled = true;
 	
 	clearInterval(timer_id);
-	muncitor.postmessage("stop");
+	muncitor.postMessage("stop");
 }
 
 
