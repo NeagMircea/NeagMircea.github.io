@@ -6,30 +6,6 @@ var timer_id;
 var unghi = {};
 unghi.valoare = 0;
 
-
-function start(){
-	
-	document.getElementById("id_start").disabled = true;
-	document.getElementById("id_stop").disabled = false;
-	
-	timer_id = setInterval(desenare, 20, unghi);
-	
-	var muncitor = new Worker("prime.js");
-	muncitor.onmessage = function(e) {
-		document.getElementById("id_prime").innerHTML = e.data;
-	}		
-}
-
-
-function stop(){
-	document.getElementById("id_start").disabled = false;
-	document.getElementById("id_stop").disabled = true;
-	
-	clearInterval(timer_id);
-}
-
-
-
 function desenare(unghi){
 	
 		var canvas = document.getElementById("id_canvas");
@@ -50,6 +26,27 @@ function desenare(unghi){
 		if(unghi.valoare == 360){
 			unghi.valoare = 1;
 		}
+}
+
+
+function start(){
+	
+	document.getElementById("id_start").disabled = true;
+	document.getElementById("id_stop").disabled = false;
+	
+	timer_id = setInterval(desenare, 20, unghi);
+	
+	var muncitor = new Worker("prime.js");
+	muncitor.onmessage = function(e) {
+		document.getElementById("id_prime").innerHTML = e.data;
+	}		
+}
+
+function stop(){
+	document.getElementById("id_start").disabled = false;
+	document.getElementById("id_stop").disabled = true;
+	
+	clearInterval(timer_id);
 }
 
 
