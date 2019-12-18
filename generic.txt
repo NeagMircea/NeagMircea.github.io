@@ -1,0 +1,90 @@
+class t_multime<T>
+{
+  var elemente: [T]
+
+  init()
+  {
+   elemente = []
+  }  
+
+  init(_ a: T)
+  {
+    elemente = [a]
+  }
+
+  init (_ mult : t_multime)
+  {
+    elemente = mult.elemente
+  }
+
+
+  deinit
+  {
+    elemente = [];
+  }
+
+  func exista(_ a: T, _ egale: (T,T)->Bool)->Bool
+  {
+    for x in elemente 
+    {
+      if egale(a, x)
+      {
+      return true
+      }
+    }
+    return false
+  }
+
+  func adauga(_ a: T, _ egale: (T,T)->Bool)
+  {
+    if !exista(a, egale)
+    {
+      elemente += [a]
+    }
+    
+  }
+
+  func tipareste()
+  {
+    for x in elemente
+    {
+      print(x)
+    }
+  }
+
+}
+
+
+  func egale_int(_ a : Int, _ b: Int)->Bool
+  {
+    return a == b
+  }
+
+  enum t_caz_test
+  {
+    case ct_implicit, ct_param, adauga
+  }
+
+  var caz_curr = t_caz_test.ct_implicit
+
+  switch caz_curr
+  {
+    case .ct_implicit:
+      let m = t_multime<Int>()
+      m.tipareste()
+
+    case.ct_param:
+      let m = t_multime<Int>(5)
+      m.tipareste()
+
+    case .adauga:
+      let m = t_multime<Int>(5)
+      m.adauga(3,egale_int)
+      m.tipareste()
+  }
+
+  var m = t_multime<Int>()
+  m.adauga(2,egale_int)
+  m.adauga(3,egale_int)
+  m.adauga(2,egale_int)
+  m.tipareste()
